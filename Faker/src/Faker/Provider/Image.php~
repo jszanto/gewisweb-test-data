@@ -88,6 +88,6 @@ class Image extends Base
             return false;
         }
 
-        return $subdir . '/' . $filename;
+        return $fullPath ? $filepath : $filename;
     }
 }

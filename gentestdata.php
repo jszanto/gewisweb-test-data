@@ -109,9 +109,9 @@ function gen_album($reclevel = 0, $album_offset = 0)
         $endDateTime = $faker->dateTime->format("Y-m-d H:i:s");
         $startDateTime = $faker->dateTime($endDateTime)->format("Y-m-d H:i:s");
         $albumCount = (rand(0, 1) == 1) ? $faker->randomDigit : 0;
-        $photoCount = $faker->numberBetween(0, 100);
+        $photoCount = $faker->numberBetween(0, 75);
         $name = join($faker->words(2), ' ');
-        print "INSERT INTO `Album`(`parent_id`, `startDateTime`, `endDateTime`, `name`, `photoCount`, `albumCount`, `coverPath`) VALUES ($parent_id, '$startDateTime', '$endDateTime', '$name', '$photoCount', '$albumCount', 'null');" . PHP_EOL;
+        print "INSERT INTO `Album`(`parent_id`, `startDateTime`, `endDateTime`, `name`, `coverPath`) VALUES ($parent_id, '$startDateTime', '$endDateTime', '$name', 'null');" . PHP_EOL;
         for ($i = 0; $i < $photoCount; $i++) {
             gen_photo();
         }
