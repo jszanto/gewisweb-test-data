@@ -79,7 +79,7 @@ function gen_user()
     $initials = $firstName[0] . '.';
     $queries .=  "INSERT INTO `Member`(`lidnr`, `email`, `lastName`, `middleName`, `initials`, `firstName`) VALUES ('$lidnr', '$email', '$lastName', '', '$initials', '$firstName');" . PHP_EOL;
     $queries .=  "INSERT INTO `User` (`lidnr`, `email`, `password`) VALUES('$lidnr', '$email', '$password');" . PHP_EOL;
-    $queries .=  "INSERT INTO `UserRole`(`lidnr_id`, `role`) VALUES ($lidnr, admin);" . PHP_EOL;
+    $queries .=  "INSERT INTO `UserRole`(`lidnr_id`, `role`) VALUES ($lidnr, 'admin');" . PHP_EOL;
 }
 
 function gen_course()
@@ -114,7 +114,7 @@ function gen_album($reclevel = 0, $album_offset = 0)
         $parent_id = $reclevel == 0 ? 'NULL' : '(SELECT MAX( album_id ) FROM Photo) - ' . $album_offset;
         $endDateTime = $faker->dateTime->format("Y-m-d H:i:s");
         $startDateTime = $faker->dateTime($endDateTime)->format("Y-m-d H:i:s");
-        $albumCount = (rand(0, 1) == 1) ? $faker->randomDigit : 0;
+        $albumCount = (rand(0, 1) == 1) ? rand(1, 3) : 0;
         $photoCount = $faker->numberBetween(0, 75);
         $name = join($faker->words(2), ' ');
         $queries .=  "INSERT INTO `Album`(`parent_id`, `startDateTime`, `endDateTime`, `name`, `coverPath`) VALUES ($parent_id, '$startDateTime', '$endDateTime', '$name', 'null');" . PHP_EOL;
