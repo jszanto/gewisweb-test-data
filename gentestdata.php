@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 require_once 'Faker/src/autoload.php';
-$faker = Faker\Factory::create('nl_NL');
+$faker = Faker\Factory::create('en_US');
 
 $queries = '';
 switch(strtolower($argv[1])) {
