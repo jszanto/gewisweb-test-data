@@ -7,6 +7,12 @@
     "gewis"
   ],
   "homepage": "https://github.com/jszanto/gewisweb-test-data",
+  "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/fzaninotto/faker"
+        }
+    ],
   "require": {
     "php": ">=5.3.3",
     "fzaninotto/faker": "dev-master"
