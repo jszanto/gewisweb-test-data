@@ -11,15 +11,14 @@ class User extends AbstractTestDataService
     {
         for($i = 0; $i < 200; $i++)
         {
-            $this->generateUser();
+            $this->generateUser(8000 + $i);
         }
     }
 
-    public function generateUser()
+    public function generateUser($lidnr)
     {
         $member = new MemberModel();
 
-        $lidnr = $this->faker->unique()->randomNumber(4);
         $email = $this->faker->unique()->email;
         $firstName = explode(' ', $this->faker->name())[0];
 
@@ -32,9 +31,9 @@ class User extends AbstractTestDataService
         $member->setGender(array_rand(array('f' => 'f', 'm' => 'm', 'o' => 'o')));
         $member->setGeneration($this->faker->year());
         $member->setType(MemberModel::TYPE_ORDINARY);
-        $member->setChangedOn($this->faker->date());
-        $member->setBirth($this->faker->date());
-        $member->setExpiration($this->faker->date());
+        $member->setChangedOn(new \DateTime($this->faker->date()));
+        $member->setBirth(new \DateTime($this->faker->date()));
+        $member->setExpiration(new \DateTime($this->faker->date()));
         $this->em->persist($member);
 
         $password = '$2y$13$5WprUFHONf2tcFOKU2rlM.nhTs2x1m4rHEezFcZrMLm6qq.4hm6kC'; //==password

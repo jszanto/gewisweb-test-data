@@ -28,6 +28,11 @@ class Module
     public function getServiceConfig()
     {
         return array(
+            'factories' => array(
+                'faker' => function($sm) {
+                    return \Faker\Factory::create('en_US');
+                }
+            ),
             'invokables' => array(
                 'testdata_service_activity' => 'TestData\Service\Activity',
                 'testdata_service_company' => 'TestData\Service\Company',

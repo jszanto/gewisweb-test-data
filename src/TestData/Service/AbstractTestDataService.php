@@ -10,7 +10,7 @@ abstract class AbstractTestDataService extends AbstractService
     protected $faker;
     protected $em;
 
-    public function setServiceManager($sm)
+    public function setServiceManager(\Zend\ServiceManager\ServiceManager $sm)
     {
         parent::setServiceManager($sm);
         $this->faker = $sm->get('faker');
