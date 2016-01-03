@@ -10,11 +10,11 @@ abstract class AbstractTestDataService extends AbstractService
     protected $faker;
     protected $em;
 
-    function __construct()
+    public function setServiceManager($sm)
     {
-        parent::__construct();
-        $this->faker = $this->sm->get('faker');
-        $this->em = $this->sm->get('doctrine.entitymanager.orm_default');
+        parent::setServiceManager($sm);
+        $this->faker = $sm->get('faker');
+        $this->em = $sm->get('doctrine.entitymanager.orm_default');
     }
 
     /**
