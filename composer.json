@@ -8,7 +8,7 @@
   ],
   "homepage": "https://github.com/jszanto/gewisweb-test-data",
   "require": {
-    "php": ">=5.3.3"
+    "php": ">=5.3.3",
     "fzaninotto/faker": "dev-master"
   },
   "autoload": {
