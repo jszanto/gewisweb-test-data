@@ -1,0 +1,22 @@
+{
+  "name": "jszanto/gewisweb-test-data",
+  "description": "Module for migration scripts to the new website",
+  "type": "library",
+  "license": "GPL-3.0",
+  "keywords": [
+    "gewis"
+  ],
+  "homepage": "https://github.com/jszanto/gewisweb-test-data",
+  "require": {
+    "php": ">=5.3.3"
+    "fzaninotto/faker": "dev-master"
+  },
+  "autoload": {
+    "psr-0": {
+      "TestData": "src/"
+    },
+    "classmap": [
+      "./Module.php"
+    ]
+  }
+}
