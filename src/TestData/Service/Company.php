@@ -10,7 +10,10 @@ class Company extends AbstractTestDataService
 {
     public function generateTestData()
     {
-
+        for($i = 0; $i < 20; $i++)
+        {
+            $this->generateCompany();
+        }
     }
 
     public function generateCompany()
