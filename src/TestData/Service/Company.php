@@ -42,6 +42,8 @@ class Company extends AbstractTestDataService
         $companyEnglish->setDescription($this->faker->text());
 
         $this->em->persist($company);
+        $this->em->persist($companyEnglish);
+        $this->em->persist($companyDutch);
         $package = new JobPackageModel();
         $package->setCompany($company);
         $startDate = $this->faker->dateTimeBetween('-1 years','now');
