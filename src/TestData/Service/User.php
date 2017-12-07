@@ -57,6 +57,6 @@ class User extends AbstractTestDataService
 
     public function getRandomUser()
     {
-        return $this->getRandomUser(1)[0];
+        return $this->getRandomUsers(1)[0];
     }
 }
